@@ -1,0 +1,45 @@
+#Now that you have completed your word game code, you decide that you would 
+#like to enable your computer (SkyNet) to play the game 
+#(your hidden agenda is to prove once and for all that computers are inferior to human intellect!) 
+#In Part B you will make a modification to the playHand function from
+#part A that will enable this to happen. The idea is that you will be able 
+#to compare how you as a user succeed in the game compared to the computer's performance.
+
+
+
+def compChooseWord(hand, wordList, n):
+    """
+    Given a hand and a wordList, find the word that gives 
+    the maximum value score, and return it.
+
+    This word should be calculated by considering all the words
+    in the wordList.
+
+    If no words in the wordList can be made from the hand, return None.
+
+    hand: dictionary (string -> int)
+    wordList: list (string)
+    returns: string or None
+    """
+        # Create a new variable to store the maximum score seen so far (initially 0)
+    max_score = 0
+
+    # Create a new variable to store the best word seen so far (initially None)  
+    best_word = None
+
+    # For each word in the wordList
+    for word in wordList:
+
+        # If you can construct the word from your hand
+
+        # (hint: you can use isValidWord, or - since you don't really need to test if the word is in the wordList - you can make a similar function that omits that test)
+        if(isValidWord(word, hand, wordList)):
+            # Find out how much making that word is worth
+            score = getWordScore(word, n)        
+            # If the score for that word is higher than your best score
+            if(score > max_score):
+                # Update your best score, and best word accordingly
+                max_score = score
+                best_word = word
+    # return the best word you found.
+    return best_word
