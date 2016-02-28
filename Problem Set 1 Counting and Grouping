@@ -1,0 +1,13 @@
+#Write a function called item_order that takes as input a string named order. 
+#The string contains only words for the items the customer can order separated by one space. 
+#The function returns a string that counts the number of each item and consolidates them in the following order:
+#salad:[# salad] hamburger:[# hambruger] water:[# water]
+
+#If order = "salad water hamburger salad hamburger" then the function returns "salad:2 hamburger:2 water:1"
+#If order = "hamburger water hamburger" then the function returns "salad:0 hamburger:2 water:1"
+
+def item_order(order):
+    salads = order.count("salad")
+    hamburgers = order.count("hamburger")
+    waters = order.count("water")
+    return "salad:{} hamburger:{} water:{}".format(salads, hamburgers, waters)
