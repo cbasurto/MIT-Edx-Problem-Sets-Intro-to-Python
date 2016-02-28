@@ -1,0 +1,24 @@
+#Write a program to calculate the credit card balance after one year 
+#if a person only pays the minimum monthly payment required by the credit card company each month.
+
+#Monthly interest rate= (Annual interest rate) / 12.0
+#Minimum monthly payment = (Minimum monthly payment rate) x (Previous balance)
+#Monthly unpaid balance = (Previous balance) - (Minimum monthly payment)
+#Updated balance each month = (Monthly unpaid balance) + (Monthly interest rate x Monthly unpaid balance)
+
+
+
+month = 0
+totalPay = 0
+monthlyInterestRate = annualInterestRate / 12.0
+while month <12:
+    minPay = monthlyPaymentRate * balance
+    unpayBal = balance - minPay
+    totalPay += minPay
+    balance = unpayBal + (monthlyInterestRate * unpayBal)
+    month += 1
+    print('Month: ' + str(month))
+    print('Minimum monthly payment: ' + str(round(minPay,2)))
+    print('Remaining balance: ' + str(round(balance,2)))
+print('Total paid: ' + str(round(totalPay,2)))
+print(' Remaining balance: ' + str(round(balance,2)))
