@@ -1,0 +1,8 @@
+#couting the number of vowels in a word
+
+count = 0
+vowels = set("aeiou")
+for letter in s:
+    if letter in vowels:
+        count +=1
+print ('Number of vowels: ' + str(count))
