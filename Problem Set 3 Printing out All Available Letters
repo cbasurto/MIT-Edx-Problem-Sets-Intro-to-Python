@@ -1,0 +1,24 @@
+#Next, implement the function getAvailableLetters that takes in one parameter
+#- a list of letters, lettersGuessed. This function returns a string that is 
+#comprised of lowercase English letters - all lowercase English letters 
+#that are not in lettersGuessed.
+
+def getAvailableLetters(lettersGuessed):
+    '''
+    lettersGuessed: list, what letters have been guessed so far
+    returns: string, comprised of letters that represents what letters have not
+      yet been guessed.
+    '''
+    # FILL IN YOUR CODE HERE...
+    notGuessed = []
+    # notGuessed = string.ascii_lowercase
+    for x in range(26):
+        notGuessed += chr(x + ord('a'))
+
+    for y in lettersGuessed:
+        notGuessed.remove(y)
+
+    string = ""
+    for z in notGuessed:
+        string += z
+    return string
